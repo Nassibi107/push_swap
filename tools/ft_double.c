@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_double.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/04 16:10:16 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/04 15:27:02 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/04 15:27:47 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "../push_swap.h"
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "src/libft/libft.h"
-#include "tools/tools.h"
-
-char	**input_checker(int ac, char **av);
-
-typedef struct stack
+int	is_double(char **rst)
 {
-	int	value;
-	struct stack	*next;
-} t_stack;
+	int i = 0;
+	int j = 0;
 
-#endif
-
+	while (rst[i])
+	{
+		j = i + 1;
+		while (rst[j])
+		{
+			if (ft_atoi(rst[i]) == ft_atoi(rst[j]))
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}

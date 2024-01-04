@@ -6,12 +6,11 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/04 13:14:57 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:18:18 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	err(void)
 {
@@ -30,7 +29,7 @@ static int	is_empty(char *str)
 	return (0);
 }
 
-static char	**input_checker(int ac, char **av)
+char	**input_checker(int ac, char **av)
 {
 	char		*str;
 	char		**rst;
@@ -39,8 +38,7 @@ static char	**input_checker(int ac, char **av)
 	len = ft_lenjoin(av, ac);
 	str = ft_join(av, len, ac);
 	rst = ft_split(str, ' ');
-	if (is_valid(rst) && is_double(rst)
-		&& is_valid(rst))
+	if (is_valid(rst) && is_double(rst))
 		return (rst);
 	return (0x0);
 }

@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   tools.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/04 16:10:16 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/04 15:37:02 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#ifndef FT_TOOLS_H
+# define FT_TOOLS_H
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
+# include <signal.h>
+# include <unistd.h>
 
-#include "src/libft/libft.h"
-#include "tools/tools.h"
-
-char	**input_checker(int ac, char **av);
-
-typedef struct stack
-{
-	int	value;
-	struct stack	*next;
-} t_stack;
-
+int	is_double(char **rst);
+int	ft_lenjoin(char **av,int ac);
+int	is_valid(char **rst);
+char	*ft_join(char **av,int len,int ac);
 #endif
 

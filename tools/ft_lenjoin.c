@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lenjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/04 16:10:16 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/04 15:33:53 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/04 15:34:30 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "../push_swap.h"
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "src/libft/libft.h"
-#include "tools/tools.h"
-
-char	**input_checker(int ac, char **av);
-
-typedef struct stack
+int ft_lenjoin(char **av,int ac)
 {
-	int	value;
-	struct stack	*next;
-} t_stack;
-
-#endif
-
+	int i = 0 ;
+	int j = 1;
+	int len = 0;
+	while (j < ac)
+	{
+		i = 0;
+		while (av[j][i])
+		{
+			len++;
+			i++;
+		}
+		if (j < ac - 1)
+			len += 1;
+		j++;
+	}
+	return (len);
+}

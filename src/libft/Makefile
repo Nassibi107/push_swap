@@ -10,6 +10,7 @@ SRCS_B = ft_lstnew_bonus.c  ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c \
 			ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 NAME = libft.a
+BONUS = bonus
 LIBC = ar -rcs
 OBJS = ${SRCS:.c=.o}
 OBJS_B = ${SRCS_B:.c=.o}
@@ -27,22 +28,22 @@ RESET = \033[0m
 .c.o:
 	@${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I ${INCS}
 
-${NAME}: ${OBJS}
+all: ${NAME} bonus
+
+${NAME}: ${OBJS} 
 	@echo "$(GREEN)------------------------------------------------------$(RESET)"
-	@echo "$(GREEN)		ANA KAN9SOD ma3adix 3a ma3a parla "
+	@echo "$(GREEN)		libft Running • "
 	@echo "$(GREEN)------------------------------------------------------$(RESET)"
 	@${LIBC} ${NAME} ${OBJS}
 
-all: ${NAME}
-
-bonus: all $(OBJS_B)
+bonus:  $(OBJS_B)
 	@echo "$(BLUE)------------------------------------------------------$(RESET)"
-	@echo "$(BLUE)		>> • BONUS√ • $(RESET)"
+	@echo "$(BLUE)		>> • libft  BONUS√ • $(RESET)"
 	@echo "$(BLUE)------------------------------------------------------$(RESET)"
 	@$(LIBC) $(NAME) $(OBJS_B)
 
 clean:
-	@echo "$(YELLOW)it was cleaned up!$(RESET)"
+	@echo "$(YELLOW)libft has cleaned up!$(RESET)"
 	@rm -rf $(OBJS) $(OBJS_B)
 
 fclean: clean

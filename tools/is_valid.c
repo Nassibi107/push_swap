@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   is_valid.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/04 16:10:16 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/04 15:31:13 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "../push_swap.h"  
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "src/libft/libft.h"
-#include "tools/tools.h"
-
-char	**input_checker(int ac, char **av);
-
-typedef struct stack
+int	is_valid(char **rst)
 {
-	int	value;
-	struct stack	*next;
-} t_stack;
+	int i = 0;
+	int j = 0;
 
-#endif
-
+	while (rst[i])
+	{
+		j = 0;
+		long t =  ft_atoi(rst[i]);
+		if (rst[i][j] == 45 || rst[i][j] == 43)
+			j++;
+		while (rst[i][j])
+		{
+			if (!ft_isdigit(rst[i][j]))
+			{
+				return (0);
+			}
+			j++;
+		}
+		if ( t > 2147483647 || t < -2147483647)
+				return (0);
+		i++;
+	}
+	return (1);
+}
