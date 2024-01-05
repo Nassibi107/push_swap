@@ -1,4 +1,4 @@
-SRCS  = ft_double.c ft_lenjoin.c is_valid.c ft_join.c
+SRCS  = ft_double.c ft_lenjoin.c is_valid.c ft_join.c ft_build_sa.c
 
 OBJS	= ${SRCS:.c=.o}
 

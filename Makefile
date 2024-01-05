@@ -33,6 +33,7 @@ all: $(TOOLS)  $(LIBFT) $(AOUT)
 
 $(AOUT): $(OBJ) $(INC)
 	@$(CC) $(FLAGS) $(TOOLS) $(LIBFT) -o $@ $(OBJ)
+	@ $(RM) $(OBJ)
 	@printf "$(OK) push_swap ready.\n"
 
 $(TOOLS):
