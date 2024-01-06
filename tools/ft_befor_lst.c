@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_befor_lst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/06 10:51:46 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/05 21:15:57 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/06 11:02:21 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
-
-#include <stdio.h>
-#include <limits.h>
+#include "tools.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "src/libft/libft.h"
-#include "tools/tools.h"
+t_stack	*ft_befor_lst(t_stack *lst)
+{
+	t_stack	*temp;
 
-char	**input_checker(int ac, char **av);
-
-#endif
-
+	temp = lst;
+	if (!temp)
+		return (0);
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
+}

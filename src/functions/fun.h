@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   fun.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/06 10:51:46 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/05 19:48:17 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/06 10:51:28 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef FUN_H
+#define FUN_H
 
-#include "src/libft/libft.h"
-#include "tools/tools.h"
+#include "../../push_swap.h"
 
-char	**input_checker(int ac, char **av);
+void swap(t_stack **head,char flag);
+void rotate(t_stack **head,char flag);
+void rrotate(t_stack **head,char flag);
 
 #endif
-

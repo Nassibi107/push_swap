@@ -6,34 +6,12 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 16:32:40 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/05 17:47:35 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/05 20:52:01 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include "tools.h"
 
-static void tst(t_stack **sa)
-{
-	t_stack *cur = *sa;
-	while(cur)
-	{
-		printf(">>%d\n",cur->value);
-		cur = cur->next;
-	}
-}
-
-static t_stack	*lststack(t_stack *lst)
-{
-	t_stack	*temp;
-
-	temp = lst;
-	if (!temp)
-		return (0);
-	while (temp->next)
-		temp = temp->next;
-	return (temp);
-}
 static void	ft_lstadd_back_sa(t_stack **sa, t_stack *nsa)
 {
 	t_stack	*temp;
@@ -82,6 +60,5 @@ void	ft_build_sa(char **str, t_stack **sa)
 			i++;
 		}
 	}
-	tst(sa);
 }
 

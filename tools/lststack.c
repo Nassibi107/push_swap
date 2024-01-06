@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   lststack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/06 10:51:46 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/05 20:51:46 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/05 20:53:36 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "../push_swap.h"
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
+t_stack	*lststack(t_stack *lst)
+{
+	t_stack	*temp;
 
-#include "src/libft/libft.h"
-#include "tools/tools.h"
-
-char	**input_checker(int ac, char **av);
-
-#endif
-
+	temp = lst;
+	if (!temp)
+		return (0);
+	while (temp->next)
+		temp = temp->next;
+	return (temp);
+}

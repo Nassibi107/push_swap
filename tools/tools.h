@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/05 17:16:29 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/06 10:50:55 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int	ft_lenjoin(char **av,int ac);
 int	is_valid(char **rst);
 char	*ft_join(char **av,int len,int ac);
 void	ft_build_sa(char **str, t_stack **sa);
+t_stack	*lststack(t_stack *lst);
+t_stack	*ft_befor_lst(t_stack *lst);
 #endif
 

@@ -1,4 +1,4 @@
-SRCS  = ft_double.c ft_lenjoin.c is_valid.c ft_join.c ft_build_sa.c ft_befor_lst.c lststack.c
+SRCS  = rotate.c swap.c rrotate.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -10,8 +10,8 @@ YELLOW = \033[1;33m
 BLUE = \033[1;34m
 RESET = \033[0m
 
-NAME	= tools.a
-HEAD	= tools.h
+NAME	= fun.a
+HEAD	= fun.h
 CC = cc
 %.o: %.c ${HEAD}
 	@${CC} ${FLAGS} -c $< -o $@
@@ -19,7 +19,7 @@ CC = cc
 $(NAME):${OBJS}
 	@ar rc $(NAME) $(OBJS)
 	@echo "$(GREEN)------------------------------------------------------$(RESET)"
-	@echo "$(GREEN)				• TOOLS Running •"
+	@echo "$(GREEN)				functions Running •"
 	@echo "$(GREEN)------------------------------------------------------$(RESET)"
 
 all: $(NAME)
