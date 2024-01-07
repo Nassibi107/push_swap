@@ -1,4 +1,4 @@
-SRCS  = rotate.c swap.c rrotate.c
+SRCS  = rotate.c swap.c sort_t.c ft_switch.c sort_th.c rrotate.c
 
 OBJS	= ${SRCS:.c=.o}
 

@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   get_lstmax.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 11:59:24 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/06 17:23:46 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/07 11:05:03 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
-
+#include "tools.h"
 #include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
 
-#include "src/libft/libft.h"
-#include "tools/tools.h"
 
-char	**input_checker(int ac, char **av);
+int	get_lstmax(t_stack *sa)
+{
+	int p;
 
-#endif
-
+	p = sa->value;
+	int s = 0;
+	while (sa)
+	{
+		if (sa->value > p)
+		{
+			s = sa->pos;
+			p = sa->value;
+		}
+		sa = sa->next;
+	}
+	return (s);
+}

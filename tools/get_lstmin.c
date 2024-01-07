@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   get_lstmin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 11:59:24 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/07 11:00:12 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/07 11:06:43 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "tools.h"
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
+int	get_lstmin(t_stack *sa)
+{
+	int p;
 
-#include "src/libft/libft.h"
-#include "tools/tools.h"
-
-char	**input_checker(int ac, char **av);
-
-#endif
-
+	p = sa->value;
+	int s = 0;
+	while (sa)
+	{
+		if (sa->value < p)
+		{
+			s = sa->pos;
+			p = sa->value;
+		}
+		sa = sa->next;
+	}
+	return (s);
+}

@@ -6,12 +6,11 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:01:43 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/06 10:52:15 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:00:30 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fun.h"
-#include <stdio.h>
 
 static void rrotate_a(t_stack **head)
 {
@@ -34,8 +33,7 @@ static void rrotate_b(t_stack **head)
 	ft_putstr_fd("rrb\n", 1);
 }
 
-
-void ft_rrotate(t_stack **head,char flag)
+void	rrotate(t_stack **head,char flag)
 {
 	if (flag == 'a')
 		rrotate_a(head);

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   showlst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 11:59:24 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/07 11:37:05 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/07 11:51:44 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "tools.h"
+#include "../push_swap.h"
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
-
-#include "src/libft/libft.h"
-#include "tools/tools.h"
-
-char	**input_checker(int ac, char **av);
-
-#endif
-
+void	showlst(t_stack *head)
+{
+	while (head)
+	{
+		ft_putnbr_fd(head->value, 1);
+		ft_putchar_fd('\t', 1);
+		head = head->next;
+	}
+}

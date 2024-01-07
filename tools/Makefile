@@ -1,4 +1,6 @@
-SRCS  = ft_double.c ft_lenjoin.c is_valid.c ft_join.c ft_build_sa.c ft_befor_lst.c lststack.c
+SRCS  = ft_double.c ft_lenjoin.c is_valid.c ft_join.c ft_build_sa.c \
+		 ft_befor_lst.c lststack.c get_lstmin.c get_lstmax.c get_lstsize.c \
+		 showlst.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -12,7 +14,7 @@ RESET = \033[0m
 
 NAME	= tools.a
 HEAD	= tools.h
-CC = cc
+CC = gcc
 %.o: %.c ${HEAD}
 	@${CC} ${FLAGS} -c $< -o $@
 

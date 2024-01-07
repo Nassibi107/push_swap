@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   get_lstsize.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 11:59:24 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/07 11:50:23 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/07 11:50:46 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "tools.h"
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
+int	get_lstsize(t_stack *lst)
+{
+	t_stack	*head;
+	int		cl;
 
-#include "src/libft/libft.h"
-#include "tools/tools.h"
-
-char	**input_checker(int ac, char **av);
-
-#endif
-
+	if (!lst)
+		return (0);
+	head = lst;
+	cl = 0;
+	while (head)
+	{
+		cl++;
+		head = head->next;
+	}
+	return (cl);
+}

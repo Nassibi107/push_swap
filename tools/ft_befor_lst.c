@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:15:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/06 11:02:21 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:05:06 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*ft_befor_lst(t_stack *lst)
 	temp = lst;
 	if (!temp)
 		return (0);
-	while (temp->next != NULL)
+	while (temp->next->next)
 		temp = temp->next;
 	return (temp);
 }

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_switch.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 11:59:24 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/07 11:30:09 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/07 15:39:58 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
 
+#include "fun.h"
 #include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
 
-#include "src/libft/libft.h"
-#include "tools/tools.h"
 
-char	**input_checker(int ac, char **av);
+void ft_switch(t_stack *head,int (*show)(t_stack *))
+{
+	int len;
 
-#endif
-
+	len = get_lstsize(head);
+	if (len == 2)
+	{
+		sort_t(&head, 'a');
+		show(head);
+	}
+	else if (len == 3)
+	{
+		sort_th(&head, 'a');
+	}
+}
