@@ -6,11 +6,9 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:06:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 16:36:17 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:40:55 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "fun.h"
 
@@ -35,5 +33,5 @@ void sort_th (t_stack **head ,char flag)
       rotate(head, flag);
    else if (p_max == 1 && p_min == 2)
       rrotate(head, flag);
-   
+
 }

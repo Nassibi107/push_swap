@@ -6,12 +6,11 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 13:22:24 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:44:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "tools/tools.h"
 #include "src/functions/fun.h"
 
 static void	err(void)
@@ -65,7 +64,7 @@ int	main(int ac, char **av)
 			if (input_checker(ac, av))
 			{
 				ft_build_sa(input_checker(ac, av), &sa);
-				ft_switch(sa, get_lstsize);
+				ft_switch(sa);
 			}
 			else
 				err();

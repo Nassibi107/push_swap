@@ -6,11 +6,10 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 11:37:05 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 11:51:44 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:42:18 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
 #include "../push_swap.h"
 
 void	showlst(t_stack *head)

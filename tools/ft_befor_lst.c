@@ -6,13 +6,11 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:15:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 16:05:06 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:41:21 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 t_stack	*ft_befor_lst(t_stack *lst)
 {
