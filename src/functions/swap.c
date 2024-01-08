@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:47:55 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/06 12:03:38 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:31:16 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void swap_a(t_stack **head)
 	(*head)->next = swp->next;
 	swp->next = *head;
 	(*head) = swp;
-	ft_putstr_fd("sa\n", 1);
+	ft_putendl_fd("sa", 1);
 }
 static void swap_b(t_stack **head)
 {
@@ -27,7 +27,7 @@ static void swap_b(t_stack **head)
 	swp = *head;
 	*head = (*head)->next;
 	*head = swp;
-	ft_putstr_fd("sb\n", 1);
+	ft_putendl_fd("sa", 1);
 }
 void swap(t_stack **head,char flag)
 {

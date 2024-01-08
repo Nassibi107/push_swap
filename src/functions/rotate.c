@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 20:27:31 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/06 10:16:23 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:30:16 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void rotate_a(t_stack **head)
 	lststack(*head)->next = *head;
 	(*head)->next = 0x0;
 	*head = rot;
-	ft_putstr_fd("ra\n", 1);
+	ft_putendl_fd("ra", 1);
 }
 static void rotate_b(t_stack **head)
 {
@@ -34,7 +34,7 @@ static void rotate_b(t_stack **head)
 	lststack(*head)->next = *head;
 	(*head)->next = 0x0;
 	*head = rot;
-	ft_putstr_fd("rb\n", 1);
+	ft_putendl_fd("ra", 1);
 }
 
 

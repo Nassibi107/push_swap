@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:01:43 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/08 14:45:42 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:31:34 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void rrotate_a(t_stack **head)
    ft_befor_lst(*head)->next = NULL;
    tmp->next = (*head);
    *head = tmp;
-	ft_putstr_fd("rra\n", 1);
+	ft_putendl_fd("rra", 1);
 }
 static void rrotate_b(t_stack **head)
 {
@@ -30,7 +30,7 @@ static void rrotate_b(t_stack **head)
    ft_befor_lst(*head)->next = NULL;
    tmp->next = (*head);
    tmp = *head;
-	ft_putstr_fd("rrb\n", 1);
+	ft_putendl_fd("rra", 1);
 }
 
 void	rrotate(t_stack **head,char flag)

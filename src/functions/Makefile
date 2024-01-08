@@ -1,6 +1,5 @@
 SRCS  = rotate.c swap.c sort_t.c ft_switch.c \
 		sort_th.c rrotate.c push_a.c push_b.c \
-		pushing.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -21,7 +20,7 @@ CC = cc
 $(NAME):${OBJS}
 	@ar rc $(NAME) $(OBJS)
 	@echo "$(GREEN)------------------------------------------------------$(RESET)"
-	@echo "$(GREEN)				functions Running •"
+	@echo "$(GREEN)		functions Running •"
 	@echo "$(GREEN)------------------------------------------------------$(RESET)"
 
 all: $(NAME)

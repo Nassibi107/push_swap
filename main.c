@@ -6,16 +6,17 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/08 16:11:11 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:32:09 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "src/functions/fun.h"
 
+
 static void	err(void)
 {
-	ft_putstr_fd("Error\n", 2);
+	ft_putendl_fd("Error", 2);
 }
 
 static int	is_empty(char *str)
