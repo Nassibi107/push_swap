@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 13:15:39 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:59:11 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int	get_lstmin(t_stack *sa);
 int	get_lstmax(t_stack *sa);
 int	get_lstsize(t_stack *sa);
 void	showlst(t_stack *sa);
+void	set_pos_lstx(t_stack *head);
 
 #endif

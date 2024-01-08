@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 16:32:40 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 11:25:49 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/08 09:32:46 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_build_sa(char **str, t_stack **sa)
 	{
 	if (!sa)
 	{
-		ft_lstnew_sa(val, i);
+		ft_lstnew_sa(val, i); 
 		val = (int) ft_atoi(str[i++]);
 	}
 	else

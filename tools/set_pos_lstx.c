@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_t.c                                           :+:      :+:    :+:   */
+/*   set_pos_lstx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 11:23:27 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 20:06:40 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/08 14:36:34 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/08 14:59:45 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "fun.h"
 
-void sort_t (t_stack **head ,char flag)
+#include "tools.h"
+
+
+
+void set_pos_lstx(t_stack *head)
 {
-	if ((*head)->value > (*head)->next->value)
-		swap(head, flag);
-	showlst(*head);
+	t_stack	*tmp ;
+	int	i;
+
+	i = 0;
+	tmp = head;
+	while (tmp)
+	{
+		tmp->pos = i++;
+		tmp = tmp->next;
+	}
+
 }

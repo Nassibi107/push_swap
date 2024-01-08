@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 16:44:04 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:11:11 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char	**input_checker(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_stack	*sa;
+	t_stack	*sb;
 	int		j;
 	int		e;
 
@@ -64,7 +65,7 @@ int	main(int ac, char **av)
 			if (input_checker(ac, av))
 			{
 				ft_build_sa(input_checker(ac, av), &sa);
-				ft_switch(sa);
+				ft_switch(sa,sb);
 			}
 			else
 				err();
