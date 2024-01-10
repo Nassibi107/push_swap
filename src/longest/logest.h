@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:49:01 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/09 11:48:05 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:08:09 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,6 @@
 
 #include "../functions/fun.h"
 
+
+int *ft_tsub(t_stack *head);
 #endif

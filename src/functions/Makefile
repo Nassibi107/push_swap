@@ -1,5 +1,5 @@
 SRCS  = rotate.c swap.c sort_t.c ft_switch.c \
-		sort_th.c rrotate.c push_a.c push_b.c \
+		sort_th.c rrotate.c push_a.c push_b.c  \
 
 OBJS	= ${SRCS:.c=.o}
 

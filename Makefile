@@ -16,6 +16,9 @@ LIBFT_DIR	=	src/libft
 FUN = src/functions/fun.a
 FUN_DIR = src/functions
 
+LONGEST = src/LONGEST/logest.a
+LONGEST_DIR = src/longest
+
 INC		=	push_swap.h
 CC = gcc
 
@@ -32,10 +35,10 @@ NO	=	[$(RED)INFO$(RESET)]
 %.o: %.c ${INC}
 	@ $(CC) $(CFLAGS) -c $< -o $@
 
-all:   $(LIBFT)    $(TOOLS) $(FUN) $(AOUT)
+all:   $(LIBFT)    $(TOOLS) $(FUN)  $(LONGEST) $(AOUT)
 
 $(AOUT): $(OBJ) $(INC)
-	@$(CC) $(FLAGS) $(LIBFT)  $(TOOLS) $(FUN) -o $@ $(OBJ)
+	@$(CC) $(FLAGS) $(LIBFT)  $(TOOLS) $(LONGEST) $(FUN) -o $@ $(OBJ)
 	@ $(RM) $(OBJ)
 	@printf "$(OK) push_swap ready.\n"
 
@@ -49,12 +52,15 @@ $(LIBFT):
 
 $(FUN):
 	@ $(MAKE) -C $(FUN_DIR)
+$(LONGEST):
+	@ $(MAKE) -C $(LONGEST_DIR)
 
 
 clean:
 	@ $(MAKE) clean -C $(TOOLS_DIR)
 	@ $(MAKE) clean -C $(LIBFT_DIR)
 	@ $(MAKE) clean -C $(FUN_DIR)
+	@ $(MAKE) clean -C $(LONGEST_DIR)
 	@ $(RM) $(OBJ)
 	@printf "$(_INFO) object files removed.\n"
 
@@ -62,10 +68,12 @@ fclean: clean
 	@ $(MAKE) fclean -C $(TOOLS_DIR)
 	@ $(MAKE) fclean -C $(LIBFT_DIR)
 	@ $(MAKE) fclean -C $(FUN_DIR)
+	@ $(MAKE) fclean -C $(LONGEST_DIR)
 	@ $(RM) $(AOUT)
 	@printf "$(_INFO) libft removed.\n"
 	@printf "$(_INFO) tools removed.\n"
 	@printf "$(_INFO) funrction removed.\n"
+	@printf "$(_INFO) longest removed.\n"
 	@printf "$(_INFO) push_swap removed.\n"
 
 re: fclean all

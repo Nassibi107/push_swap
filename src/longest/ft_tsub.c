@@ -6,19 +6,20 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:40:35 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/10 13:07:08 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:21:37 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "logest.h"
 #include "../../push_swap.h"
+#include <stdlib.h>
 
 
-static int get_tabmax(int *tab, unsigned int len)
+static int get_tabmax(int *tab, int len)
 {
 	int id = 0;
 	int max = 0;
-	while (id  < len - 1)
+	while (id  < (len - 1))
 		{
 			if (tab[id] > max)
 				max = tab[id];
@@ -39,9 +40,9 @@ static void ft_setnum(int *tab,int len,int val)
 }
 static int *get_sublst(t_stack *head,int *arr, int *trk,int size)
 {
-		t_stack	*i;
-		t_stack	*j;
-		t_stack	*tmp;
+		t_stack	*i = NULL;
+		t_stack	*j = NULL;
+		t_stack	*tmp = NULL;
 		int		id;
 
 		i = head->next;
@@ -67,12 +68,9 @@ static int *get_sublst(t_stack *head,int *arr, int *trk,int size)
 }
 int *ft_tsub(t_stack *head)
 {
-	t_stack *tmp = head;
-	t_stack *j = head;
-	t_stack *i  = head->next;
 	int size = get_lstsize(head);
-	int *arr = calloc(size ,4);
-	int *trk = calloc(size ,4);
+	int *arr = malloc(size * 4);
+	int *trk = malloc((size - 1) * 4);
 	return (get_sublst(head,arr,trk, size));
 }
 
