@@ -29,7 +29,7 @@ OK	=	[$(GREEN)SUCCESS$(RESET)]
 _INFO	=	[$(YELLOW)cleaning$(RESET)]
 NO	=	[$(RED)INFO$(RESET)]
 
-%.o: %.c
+%.o: %.c ${INC}
 	@ $(CC) $(CFLAGS) -c $< -o $@
 
 all:   $(LIBFT)    $(TOOLS) $(FUN) $(AOUT)

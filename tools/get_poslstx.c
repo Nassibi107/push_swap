@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_t.c                                           :+:      :+:    :+:   */
+/*   get_poslstx.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 11:23:27 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/08 17:45:02 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/09 12:02:14 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/09 12:23:51 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "tools.h"
 
-#include "fun.h"
-
-void sort_t (t_stack **head ,char flag)
+void get_poslstx(t_stack *head , int p)
 {
-	if ((*head)->value > (*head)->next->value)
-		swap(head, flag);
+	while(head)
+	{
+		if (head->value == p)
+			br
+	}
 }

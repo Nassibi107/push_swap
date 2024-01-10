@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_t.c                                           :+:      :+:    :+:   */
+/*   logest.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 11:23:27 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/08 17:45:02 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/09 10:49:01 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/09 11:48:05 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include "fun.h"
 
-void sort_t (t_stack **head ,char flag)
-{
-	if ((*head)->value > (*head)->next->value)
-		swap(head, flag);
-}
+#include "../functions/fun.h"
+
+#endif

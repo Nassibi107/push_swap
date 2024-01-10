@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/08 17:32:09 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:03:41 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(int ac, char **av)
 
 	j = 1;
 	e = 0;
-	if (ac >= 2)
+	if (ac  > 1)
 	{
 		while (j < ac)
 		{
@@ -75,5 +75,5 @@ int	main(int ac, char **av)
 			err();
 	}
 	else
-		err();
+		exit(1);
 }
