@@ -6,16 +6,15 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:49:01 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/10 15:08:09 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:36:23 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LONGEST_H
+# define LONGEST_H
 
 
-#include "../functions/fun.h"
+#include "../../push_swap.h"
 
 
-int *ft_tsub(t_stack *head);
 #endif
