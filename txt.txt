@@ -20,5 +20,4 @@ M  tools/Makefile
 M  tools/ft_build_sa.c
 A  tools/get_lstfsub.c
 A  tools/shefting.c
-A  tools/tools.a.XPYNWw
-?? txt.txt
+AM txt.txt

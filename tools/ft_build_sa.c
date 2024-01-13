@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 16:32:40 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:39:43 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/13 11:41:02 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static t_stack	*ft_lstnew_sa(int content,int pos)
 	new->value = content;
 	new->pos = pos;
 	new->sub = 0;
+	new->hook = 0x0;
 	new->next = NULL;
 	return (new);
 }

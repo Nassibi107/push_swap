@@ -1,4 +1,4 @@
-SRCS  = ft_tsub.c ft_subnode.c  \
+SRCS  = ft_tsub.c ft_subnode.c  nsub_to_sb.c\
 
 OBJS	= ${SRCS:.c=.o}
 

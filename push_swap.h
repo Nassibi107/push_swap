@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/12 15:12:47 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/13 14:50:50 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ typedef struct stack
 	int	value;
 	int	pos;
 	int	sub;
+	struct stack *hook;
 	struct stack	*next;
 } t_stack;
 
+
+void  nsub_to_sb(t_stack **head,t_stack **sb);
 int	is_double(char **rst);
 int	ft_lenjoin(char **av,int ac);
 int	is_valid(char **rst);
@@ -49,7 +52,7 @@ void push_b (t_stack **head,t_stack **sb);
 void	push_a (t_stack **sa,t_stack **sb );
 void	pushing (t_stack **sa,t_stack **sb );
 int *ft_tsub(t_stack *head , int size);
-void	ft_subnode(t_stack *head);
+void	ft_subnode(t_stack **head);
 void  shefting(t_stack **head);
 void  move_a(t_stack **sa,t_stack **sb);
 void  move_b(t_stack **sa,t_stack **sb );

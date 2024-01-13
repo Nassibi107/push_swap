@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:40:35 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:44:27 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/13 14:45:34 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ int *ft_tsub(t_stack *head,int size)
 	int *trk = malloc((size - 1) * 4);
 	return (get_sublst(head,arr,trk, size));
 }
+
 
 
