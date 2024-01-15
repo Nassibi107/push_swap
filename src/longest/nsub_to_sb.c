@@ -6,40 +6,38 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:42:13 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/13 14:51:04 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:47:02 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "logest.h"
 #include <stdio.h>
 
-
-static void get_flag(t_stack **head)
+int get_pos(t_stack *h)
 {
-	int size = get_lstsize(*head);
-	t_stack *tmp;
 
-	tmp = *head;
-   while (tmp)
+	while(h)
 	{
-		while (tmp->pos < (size / 2)
-			&& (tmp->sub == 0))
-		{
-			if (tmp->pos == 0 && tmp->sub == 0)
-				return ;
-			rotate(head, 'a');
-			set_pos_lstx(tmp);
-		}
-		while (tmp->pos > (size / 2)
-			&& (tmp->sub == 0) )
-		{
-			if (tmp->pos == 0 && tmp->sub == 0)
-				return  ;
+		if (h->sub == 0)
+			return (h->pos);
+		h = h->next;
+	}
+	return -1;
+}
+static void get_flag(t_stack **head,int (*f)(t_stack *))
+{
+
+	int pos = get_pos(*head);
+	if (pos == -1 )
+		return ;
+	if (pos >= f(*head) / 2)
+	{
+		while((*head)->sub != 0)
 			rrotate(head, 'a');
-			set_pos_lstx(tmp);
-		}
-		size = get_lstsize(*head);
-		tmp =  tmp->next;
+	}
+	else {
+		while((*head)->sub != 0)
+			rotate(head, 'a');
 	}
 }
 
@@ -48,11 +46,12 @@ void  nsub_to_sb(t_stack **head,t_stack **sb)
 
 	ft_subnode(head);
 	int i = 0;
-	while (i++ < get_lstsize(*head))
+	int len = get_lstsize(*head);
+	while (i++ < len)
 	{
-		get_flag(head);
-
-		push_b(head, sb);
+		get_flag(head,get_lstsize);
+		if ((*head)->sub == 0)
+			push_b(head, sb);
 	}
 }
 
@@ -83,10 +82,8 @@ void  nsub_to_sb(t_stack **head,t_stack **sb)
 // 	head->next->next->next->next->pos = 4;
 // 	head->next->next->next->next->next->pos = 5;
 
-//    //nsub_to_sb(&head,&sb);
+//    nsub_to_sb(&head,&sb);
 
-
-// 	msu(&head,&sb);
 // 	printf("\n");
 //    while(head)
 

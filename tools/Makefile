@@ -1,6 +1,6 @@
 SRCS  = ft_double.c ft_lenjoin.c is_valid.c ft_join.c ft_build_sa.c \
 		 ft_befor_lst.c lststack.c get_lstmin.c get_lstmax.c get_lstsize.c \
-		 showlst.c set_pos_lstx.c shefting.c
+		 showlst.c set_pos_lstx.c shefting.c get_lsthooks.c
 
 OBJS	= ${SRCS:.c=.o}
 

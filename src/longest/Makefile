@@ -1,4 +1,4 @@
-SRCS  = ft_tsub.c ft_subnode.c  nsub_to_sb.c\
+SRCS  = ft_tsub.c ft_subnode.c  nsub_to_sb.c  get_bsmove_lst.c\
 
 OBJS	= ${SRCS:.c=.o}
 
