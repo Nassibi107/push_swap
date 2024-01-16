@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 20:27:31 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/12 11:03:09 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:42:17 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void rotate_b(t_stack **head)
 }
 
 
-void rotate(t_stack **head,char flag)
+void rotate(t_stack **head,t_stack **sb,char flag)
 {
 	if (flag == 'a')
 		rotate_a(head);
@@ -47,6 +47,6 @@ void rotate(t_stack **head,char flag)
 	else if (flag == 'r')
 		{
 			rotate_a(head);
-			rotate_b(head);
+			rotate_b(sb);
 		}
 }

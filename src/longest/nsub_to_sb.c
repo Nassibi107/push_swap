@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:42:13 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/16 16:27:35 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:50:35 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ static void get_flag(t_stack **head,int (*f)(t_stack *))
 	if (pos >= f(*head) / 2)
 	{
 		while((*head)->sub != 0)
-			rrotate(head, 'a');
+			rrotate(head,NULL ,'a');
 	}
 	else {
 		while((*head)->sub != 0)
-			rotate(head, 'a');
+			rotate(head, NULL,'a');
 	}
 }
 

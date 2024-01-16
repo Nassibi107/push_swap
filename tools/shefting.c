@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:57:09 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/12 14:57:42 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:50:52 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void  shefting(t_stack **head)
 	while (min)
 	{
 		if (min <= (size / 2))
-			rotate(head, 'a');
+			rotate(head, NULL,'a');
 		else
-			rrotate(head, 'a');
+			rrotate(head, NULL,'a');
 		min = get_lstmin(*head);
 	}
 }

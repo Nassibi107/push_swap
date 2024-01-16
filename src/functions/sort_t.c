@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 11:23:27 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/08 17:45:02 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:53:02 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 void sort_t (t_stack **head ,char flag)
 {
 	if ((*head)->value > (*head)->next->value)
-		swap(head, flag);
+		swap(head,NULL ,flag);
 }

@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/16 13:46:45 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:43:54 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int	get_lstsize(t_stack *sa);
 void	showlst(t_stack *sa);
 void	set_pos_lstx(t_stack *head);
 
-void swap(t_stack **head,char flag);
-void rotate(t_stack **head,char flag);
-void rrotate(t_stack **head,char flag);
+void swap(t_stack **head,t_stack **sb,char flag);
+void rotate(t_stack **head,t_stack **sb,char flag);
+void rrotate(t_stack **head,t_stack **sb,char flag);
 void ft_switch(t_stack *sa , t_stack *sb);
 void sort_t (t_stack **head ,char flag);
 void sort_th (t_stack **head ,char flag);
