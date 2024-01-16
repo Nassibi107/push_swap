@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.h                                            :+:      :+:    :+:   */
+/*   ft_push_bm.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/16 10:24:42 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/16 15:49:44 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/16 16:11:05 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_TOOLS_H
-# define FT_TOOLS_H
+#include "logest.h"
 
-# include <unistd.h>
-#include "../push_swap.h"
+static int  ft_getmin_mv(t_stack *sb)
+{
+   int pos = sb->pos ;
+   int tmp = sb->mv + sb->hook->mv;
+   while(sb)
+   {
+      if ((sb->mv +  sb->hook->mv) < tmp)
+      {
+         tmp = sb->mv +  sb->hook->mv;
+         pos = sb->pos;
+      }
 
-#endif
+      sb = sb->next;
+   }
+   return (pos);
+}
+void ft_push_bm(t_stack *sb)
+{
+   int min_p;
+
+   min_p =  ft_getmin_mv(sb);
+   if ()
+}

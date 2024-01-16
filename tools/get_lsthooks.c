@@ -73,17 +73,13 @@ t_stack  *get_lsthook(t_stack *sa , t_stack *sb)
 			min = arr[i];
 		i++;
 	}
-	// printf(">> %d",len);
 
 	return (get_address_ofhook(sa, min));
 }
 void 	get_lsthooks (t_stack *sa , t_stack *sb)
 {
-
 	if  (!sb)
-		{
 			return;
-		}
 	sb->hook = get_lsthook(sa, sb);
 	get_lsthooks(sa,sb->next);
 }

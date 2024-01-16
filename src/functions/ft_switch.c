@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 11:30:09 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/15 15:50:23 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/16 10:36:15 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	ft_switch(t_stack *sa, t_stack *sb)
 		get_bsmove_lst(&sa,&sb);
 
 
-	printf("---------stack a------\n");
+	printf("\033[0;93m---------stack a------\n\033[0m");
 	showlst(sa);
-	printf("\n---------stack b------\n");
+	printf("\033[0;93m---------stack b------\n\033[0m");
 	showlst(sb);
 }

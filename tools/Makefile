@@ -14,9 +14,9 @@ RESET = \033[0m
 
 NAME	= tools.a
 HEAD	= tools.h
-CC = gcc
+CC = cc
 %.o: %.c ${HEAD}
-	@${CC} ${FLAGS} -c $< -o $@
+	${CC} ${FLAGS} -c $< -o $@
 
 $(NAME):${OBJS}
 	@ar rc $(NAME) $(OBJS)
