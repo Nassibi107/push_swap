@@ -20,7 +20,7 @@ static int  *get_arr_hook(t_stack *sa , t_stack *sb,int *len)
 			return (0x0);
 		}
    else
-      arr =  calloc(*len , sizeof(int));
+      arr =  ft_calloc(*len , sizeof(int));
    return (arr);
 }
 static t_stack  *get_addlst_min(t_stack *sa)

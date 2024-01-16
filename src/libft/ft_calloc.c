@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_bsmove_lst.c                                   :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 10:00:38 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/16 16:27:17 by ynassibi         ###   ########.fr       */
+/*   Created: 2023/10/31 19:43:41 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/16 16:34:01 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "logest.h"
-#include <stdio.h>
+#include "libft.h"
 
-
-void get_bsmove_lst(t_stack **sa, t_stack **sb)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-   nsub_to_sb(sa, sb);
-   get_lsthooks(*sa, *sb);
-   set_pos_lstx(*sb);
-   bolt(*sb,  *sa);
+	void	*arr;
+	size_t	len_s;
+
+	len_s = (nmemb * size);
+	arr = malloc(len_s);
+	if (!arr)
+		return (0);
+	ft_bzero(arr, len_s);
+	return (arr);
 }
