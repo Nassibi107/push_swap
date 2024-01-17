@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/16 17:43:54 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:04:05 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void  move_a(t_stack **sa,t_stack **sb);
 void  move_b(t_stack **sa,t_stack **sb );
 void 	get_lsthooks (t_stack *sa , t_stack *sb);
 char	**input_checker(int ac, char **av);
-void get_bsmove_lst(t_stack **sa, t_stack **sb);
+void  get_bsmove_lst(t_stack **sa, t_stack **sb);
 
 void bolt(t_stack *sb ,t_stack *sa);
 

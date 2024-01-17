@@ -6,7 +6,7 @@
 #    By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 14:18:04 by ynassibi          #+#    #+#              #
-#    Updated: 2024/01/12 14:33:15 by ynassibi         ###   ########.fr        #
+#    Updated: 2024/01/17 10:25:16 by ynassibi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ elif [ "$1" == 100 ]; then
     input=$(seq 1 100 | sort -R | tr '\t' ' '   )
      echo -e "${GREN}  $(./push_swap $input | wc -l ) ${NC}\n"
 elif [ "$1" == 500 ]; then
-    echo -e "case 5${NC}\n"
+    echo -e "case 500${NC}\n"
     input=$(seq 1 500 | sort -R | tr '\t' ' '   )
      echo -e "${GREN}  $(./push_swap $input | wc -l ) ${NC}\n"
 else

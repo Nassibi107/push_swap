@@ -1,80 +1,53 @@
-NAME  = push_swap.a
-AOUT  = push_swap
+# Define the output executable and library names
+NAME = push_swap.a
+AOUT = push_swap
 
+# Define source files for tools, libft, functions, and longest
+SRCS_T = tools/ft_double.c tools/ft_lenjoin.c tools/is_valid.c tools/ft_join.c tools/ft_build_sa.c \
+         tools/ft_befor_lst.c tools/lststack.c tools/get_lstmin.c tools/get_lstmax.c tools/get_lstsize.c \
+         tools/showlst.c tools/set_pos_lstx.c tools/shefting.c tools/get_lsthooks.c
 
-SRC  = main.c
-OBJ	= main.o
+SRCS_L = src/libft/ft_atoi.c src/libft/ft_putchar_fd.c src/libft/ft_putendl_fd.c src/libft/ft_putnbr_fd.c \
+         src/libft/ft_split.c src/libft/ft_isdigit.c src/libft/ft_putstr_fd.c src/libft/ft_bzero.c src/libft/ft_calloc.c
 
-FLAGS	= -Wall -Wextra -Werror
+SRCS_LG = src/longest/ft_tsub.c src/longest/ft_subnode.c src/longest/nsub_to_sb.c src/longest/get_bsmove_lst.c src/longest/bolt.c
 
-TOOLS	=	tools/tools.a
-TOOLS_DIR	=	tools
+SRCS_F = src/functions/rotate.c src/functions/swap.c src/functions/sort_t.c src/functions/ft_switch.c \
+         src/functions/sort_th.c src/functions/rrotate.c src/functions/push_a.c src/functions/push_b.c src/functions/move_a.c \
+         src/functions/move_b.c
 
-LIBFT	=	src/libft/libft.a
-LIBFT_DIR	=	src/libft
+SRC = main.c
+OBJ = main.o
+OBJS_T = $(SRCS_T:.c=.o)
+OBJS_L = $(SRCS_L:.c=.o)
+OBJS_LG = $(SRCS_LG:.c=.o)
+OBJS_F = $(SRCS_F:.c=.o)
 
-FUN = src/functions/fun.a
-FUN_DIR = src/functions
+FLAGS = -Wall -Wextra -Werror
 
-LONGEST = src/LONGEST/logest.a
-LONGEST_DIR = src/longest
+HEAD = push_swap.h
+CC = cc
 
-INC		=	push_swap.h
-CC = gcc
+%.o: %.c ${HEAD}
+	${CC} ${FLAGS} -c $< -o $@
 
-GREEN		=	\e[38;5;118m
-YELLOW		=	\e[38;5;226m
-RED = \033[1;31m
-RESET		=	\e[0m
+all: $(NAME) $(AOUT)
 
+$(NAME): $(OBJS_L) $(OBJS_T) $(OBJS_F) $(OBJS_LG)
+	@ar rc $(NAME) $(OBJS_L) $(OBJS_T) $(OBJS_F) $(OBJS_LG)
+	@ranlib $(NAME)
 
-OK	=	[$(GREEN)SUCCESS$(RESET)]
-_INFO	=	[$(YELLOW)cleaning$(RESET)]
-NO	=	[$(RED)INFO$(RESET)]
-
-%.o: %.c ${INC}
-	@ $(CC) $(CFLAGS) -c $< -o $@
-
-all:   $(LIBFT)    $(TOOLS) $(FUN)  $(LONGEST) $(AOUT)
-
-$(AOUT): $(OBJ) $(INC)
-	@$(CC) $(FLAGS) $(LIBFT)  $(TOOLS) $(LONGEST) $(FUN) -o $@ $(OBJ)
-	@ $(RM) $(OBJ)
+$(AOUT): $(NAME) $(OBJ)
+	@$(CC) $(FLAGS) -o $@ $(OBJ) $(NAME)
+	@$(RM) $(OBJ)
 	@printf "$(OK) push_swap ready.\n"
 
-
-
-$(TOOLS):
-	@ $(MAKE) -C $(TOOLS_DIR)
-
-$(LIBFT):
-	@ $(MAKE) -C $(LIBFT_DIR)
-
-$(FUN):
-	@ $(MAKE) -C $(FUN_DIR)
-$(LONGEST):
-	@ $(MAKE) -C $(LONGEST_DIR)
-
-
 clean:
-	@ $(MAKE) clean -C $(TOOLS_DIR)
-	@ $(MAKE) clean -C $(LIBFT_DIR)
-	@ $(MAKE) clean -C $(FUN_DIR)
-	@ $(MAKE) clean -C $(LONGEST_DIR)
-	@ $(RM) $(OBJ)
-	@printf "$(_INFO) object files removed.\n"
+	@$(RM) -rf $(OBJ) $(OBJS_L) $(OBJS_T) $(OBJS_F) $(OBJS_LG)
+	@printf "$(INFO) object files removed.\n"
 
 fclean: clean
-	@ $(MAKE) fclean -C $(TOOLS_DIR)
-	@ $(MAKE) fclean -C $(LIBFT_DIR)
-	@ $(MAKE) fclean -C $(FUN_DIR)
-	@ $(MAKE) fclean -C $(LONGEST_DIR)
-	@ $(RM) $(AOUT)
-	@printf "$(_INFO) libft removed.\n"
-	@printf "$(_INFO) tools removed.\n"
-	@printf "$(_INFO) funrction removed.\n"
-	@printf "$(_INFO) longest removed.\n"
-	@printf "$(_INFO) push_swap removed.\n"
+	@$(RM) -rf $(NAME) $(AOUT)
+	@printf "$(INFO) $(NAME) removed.\n"
 
 re: fclean all
-.PHONY: all clean fclean re
