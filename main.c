@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/17 13:03:57 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:59:17 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 			if (input_checker(ac, av))
 			{
 				ft_build_sa(input_checker(ac, av), &sa);
-				ft_switch(sa,sb);
+					ft_switch(sa,sb);
 			}
 			else
 				err();

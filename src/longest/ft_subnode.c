@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:58:21 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/13 10:28:40 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:53:41 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int getmax_pos(int *tab,int size,int *max)
 
 	while (i < size)
 	{
-		if (tab[i] >= *max)
+		if (tab[i] > *max)
 		{	*max = tab[i];
 			p = i;
 		}
@@ -70,6 +70,7 @@ void ft_subnode(t_stack **head)
 			break;
 		else
 			max--;
-		p =  get_smax_pos(arr,size,&max);
+		size -= (size - p);
+		p =  get_smax_pos(arr,size ,&max);
 	}
 }

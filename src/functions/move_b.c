@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:10:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/12 15:13:17 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:05:19 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void  move_b(t_stack **sa,t_stack **sb )
 {
-   shefting(sa);
-   push_b (sa,sb);
+	shefting(sa);
+	push_b (sa,sb);
 }

@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:40:35 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/13 14:45:34 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:41:39 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int get_tabmax(int *tab, int len)
 	int max = 0;
 	while (id  < (len - 1))
 		{
-			if (tab[id] > max)
+			if (tab[id] >= max)
 				max = tab[id];
 			id++;
 		}
@@ -61,7 +61,7 @@ static int *get_sublst(t_stack *head,int *arr, int *trk,int size)
 					id++;
 				j = j->next;
 			}
-			arr[i->pos] = get_tabmax(trk,size);
+			arr[i->pos] = get_tabmax(trk,size) ;
 			i= i->next;
 		}
 	return (arr);
@@ -70,7 +70,7 @@ int *ft_tsub(t_stack *head,int size)
 {
 
 	int *arr = malloc(size * 4);
-	int *trk = malloc((size - 1) * 4);
+	int *trk = malloc((size - 1 ) * 4);
 	return (get_sublst(head,arr,trk, size));
 }
 

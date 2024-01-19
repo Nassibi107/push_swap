@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:03:21 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/12 15:05:37 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:05:30 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void  move_a(t_stack **sa,t_stack **sb )
 {
-   sort_th(sa, 'a');
-   push_a (sa,sb);
+	sort_th(sa, 'a');
+	push_a (sa,sb);
 }
