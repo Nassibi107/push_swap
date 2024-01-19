@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:30:26 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:28:00 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@ int	is_valid(char **rst)
 {
 	int		i;
 	int		j;
-	long	t;
 
 	i = 0;
 	j = 0;
 	while (rst[i])
 	{
 		j = 0;
-		t = ft_atoi(rst[i]);
 		if (rst[i][j] == 45 || rst[i][j] == 43)
 			j++;
+		if (!rst[i][j])
+			return (0);
 		while (rst[i][j])
 		{
-			if (!ft_isdigit(rst[i][j]))
+			if (!ft_isdigit(rst[i][j++]))
 			{
 				return (0);
 			}
-			j++;
 		}
-		if (t > 2147483647 || t < -2147483647)
+		if ( ft_atoi(rst[i]) > 2147483647
+			|| ft_atoi(rst[i]) < -2147483647)
 			return (0);
 		i++;
 	}

@@ -6,16 +6,18 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 16:17:05 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:23:00 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "src/functions/fun.h"
+#include <stdio.h>
 
 static void	err(void)
 {
 	ft_putendl_fd("Error", 2);
+	exit(1);
 }
 
 static int	is_empty(char *str)
@@ -58,7 +60,7 @@ static int	ft_parsing(int ac, char **av)
 	}
 	if (!e)
 	{
-		if (input_checker(ac, av))
+		if (input_checker(ac, av) != NULL)
 			return (1);
 		else
 			return (0);
@@ -74,16 +76,16 @@ int	main(int ac, char **av)
 
 	sb = NULL;
 	sa = NULL;
-	if (ac > 1)
+	if (ft_parsing(ac,av))
 	{
-		if (ft_parsing(ac, av))
+		if (ac > 1)
 		{
 			ft_build_sa(input_checker(ac, av), &sa);
 			ft_switch(sa, sb);
 		}
 		else
-			err();
+			exit(1);
 	}
 	else
-		exit(1);
+		err();
 }

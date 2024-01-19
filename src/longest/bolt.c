@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:19:22 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:22:05 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:51:02 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,4 @@ void	bolt(t_stack *sb, t_stack *sa)
 		sb = sb->next;
 	}
 	ft_count_move(sa, size_a);
-	write(1, "ok\n", 3);
 }

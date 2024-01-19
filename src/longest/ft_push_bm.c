@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 14:49:24 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:54:36 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	ft_up(t_stack **sb, t_stack **sa)
 		else
 		{
 			if ((*sb)->pos > 0)
-				rotate(sb, NULL, 'a');
+				rotate(sb, NULL, 'b');
 			if ((*sb)->hook->pos > 0)
 				rotate(sa, NULL, 'a');
 		}
@@ -60,7 +60,7 @@ static void	ft_down(t_stack **sb, t_stack **sa)
 			if ((*sb)->pos == 0)
 				rrotate(sa, NULL, 'a');
 			else
-				rrotate(sb, NULL, 'a');
+				rrotate(sb, NULL, 'b');
 		}
 	}
 	push_a(sa, sb);
@@ -71,15 +71,13 @@ static void	ft_down_up(t_stack **sb, t_stack **sa, int sib, int sia)
 	while ((*sb)->pos != 0 || (*sb)->hook->pos != 0)
 	{
 		if ((*sb)->pos > sib / 2)
-			rrotate((sb), NULL, 'a');
+			rrotate((sb), NULL, 'b');
 		if ((*sb)->hook->pos > sia / 2)
 			rrotate(sa, NULL, 'a');
 		if ((*sb)->pos <= sib / 2 && (*sb)->pos != 0)
-			rotate((sb), NULL, 'a');
+			rotate((sb), NULL, 'b');
 		if ((*sb)->hook->pos <= sia / 2 && (*sb)->hook->pos != 0)
 			rotate(sa, NULL, 'a');
-		if ((*sb)->pos == 0 || (*sb)->hook->pos == 0)
-			puts("here");
 	}
 	push_a(sa, sb);
 }
