@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:42:13 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:24:09 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:56:22 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	get_pos(t_stack *h)
 	}
 	return (-1);
 }
+
 static void	get_flag(t_stack **head, int (*f)(t_stack *))
 {
 	int	pos;

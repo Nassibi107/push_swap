@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:22:47 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:49:24 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static t_stack	*ft_getmin_mv(t_stack *sb)
 	}
 	return (ele);
 }
+
 static void	ft_up(t_stack **sb, t_stack **sa)
 {
 	while ((*sb)->pos != 0 || (*sb)->hook->pos != 0)
@@ -82,6 +83,7 @@ static void	ft_down_up(t_stack **sb, t_stack **sa, int sib, int sia)
 	}
 	push_a(sa, sb);
 }
+
 void	ft_push_bm(t_stack **sb, t_stack **sa)
 {
 	t_stack	*min_p;

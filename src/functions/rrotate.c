@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:01:43 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:12:21 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:46:26 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	rrotate_a(t_stack **head)
 	ft_putendl_fd("rra", 1);
 	set_pos_lstx(*head);
 }
+
 static void	rrotate_b(t_stack **head)
 {
 	t_stack	*tmp;

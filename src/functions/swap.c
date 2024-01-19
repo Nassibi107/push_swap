@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:47:55 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:13:42 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:46:51 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	swap_a(t_stack **head)
 	(*head) = swp;
 	ft_putendl_fd("sa", 1);
 }
+
 static void	swap_b(t_stack **head)
 {
 	t_stack	*swp;
@@ -31,6 +32,7 @@ static void	swap_b(t_stack **head)
 	*head = swp;
 	set_pos_lstx(*head);
 }
+
 void	swap(t_stack **head, t_stack **sb, char flag)
 {
 	if (flag == 'a')

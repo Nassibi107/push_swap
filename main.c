@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:34:03 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:27:43 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,32 +44,42 @@ char	**input_checker(int ac, char **av)
 	return (0x0);
 }
 
+static int	ft_parsing(int ac, char **av)
+{
+	int		j;
+	int		e;
+
+	j = 1;
+	e = 0;
+	while (j < ac)
+	{
+		if (is_empty(av[j++]))
+			e += 1;
+	}
+	if (!e)
+	{
+		if (input_checker(ac, av))
+			return (1);
+		else
+			return (0);
+	}
+	else
+		return (0);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*sa;
 	t_stack	*sb;
-	int		j;
-	int		e;
 
 	sb = NULL;
-	j = 1;
-	e = 0;
+	sa = NULL;
 	if (ac > 1)
 	{
-		while (j < ac)
+		if (ft_parsing(ac, av))
 		{
-			if (is_empty(av[j++]))
-				e += 1;
-		}
-		if (!e)
-		{
-			if (input_checker(ac, av))
-			{
-				ft_build_sa(input_checker(ac, av), &sa);
-				ft_switch(sa, sb);
-			}
-			else
-				err();
+			ft_build_sa(input_checker(ac, av), &sa);
+			ft_switch(sa, sb);
 		}
 		else
 			err();

@@ -6,12 +6,12 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:32:28 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:05:07 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_TOOLS_H
-# define FT_TOOLS_H
+#ifndef TOOLS_H
+# define TOOLS_H
 
 # include "../push_swap.h"
 # include <unistd.h>

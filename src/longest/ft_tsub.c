@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:40:35 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:23:23 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:55:12 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static int	get_tabmax(int *tab, int len)
 		max = 1;
 	return (max);
 }
+
 static void	ft_setnum(int *tab, int len, int val)
 {
 	int	i;
@@ -42,6 +43,7 @@ static void	ft_setnum(int *tab, int len, int val)
 	while (i < len)
 		tab[i++] = val;
 }
+
 static int	*get_sublst(t_stack *head, int *arr, int *trk, int size)
 {
 	t_stack	*i;
@@ -49,9 +51,6 @@ static int	*get_sublst(t_stack *head, int *arr, int *trk, int size)
 	t_stack	*tmp;
 	int		id;
 
-	i = NULL;
-	j = NULL;
-	tmp = NULL;
 	i = head->next;
 	tmp = head;
 	ft_setnum(arr, size, 1);
@@ -73,6 +72,7 @@ static int	*get_sublst(t_stack *head, int *arr, int *trk, int size)
 	}
 	return (arr);
 }
+
 int	*ft_tsub(t_stack *head, int size)
 {
 	int	*arr;

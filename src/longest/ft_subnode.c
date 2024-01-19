@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:58:21 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 13:22:57 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:55:24 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static int	getmax_pos(int *tab, int size, int *max)
 	}
 	return (p);
 }
+
 static int	get_smax_pos(int *tab, int size, int *max)
 {
 	int	i;

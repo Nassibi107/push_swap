@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_lsthooks.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/19 14:44:36 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/19 15:26:39 by ynassibi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -6,7 +17,6 @@ static int	*get_arr_hook(t_stack *sa, t_stack *sb, int *len)
 	int	*arr;
 	int	l;
 
-	// t_stack *tmp = sb;
 	l = 0;
 	while (sa)
 	{
@@ -24,6 +34,7 @@ static int	*get_arr_hook(t_stack *sa, t_stack *sb, int *len)
 		arr = ft_calloc(*len, sizeof(int));
 	return (arr);
 }
+
 static t_stack	*get_addlst_min(t_stack *sa)
 {
 	t_stack	*p;
@@ -39,6 +50,7 @@ static t_stack	*get_addlst_min(t_stack *sa)
 	}
 	return (p);
 }
+
 t_stack	*get_address_ofhook(t_stack *sa, int min)
 {
 	t_stack	*add;
@@ -55,6 +67,7 @@ t_stack	*get_address_ofhook(t_stack *sa, int min)
 	}
 	return (add);
 }
+
 t_stack	*get_lsthook(t_stack *sa, t_stack *sb)
 {
 	t_stack	*tmp;
@@ -65,9 +78,8 @@ t_stack	*get_lsthook(t_stack *sa, t_stack *sb)
 
 	tmp = sa;
 	i = 0;
-	len = 0;
 	arr = get_arr_hook(sa, sb, &len);
-	if (len == -1)
+	if (!arr)
 		return (get_addlst_min(sa));
 	while (tmp)
 	{
@@ -76,15 +88,15 @@ t_stack	*get_lsthook(t_stack *sa, t_stack *sb)
 		tmp = tmp->next;
 	}
 	min = arr[0];
-	i = 0;
-	while (i < len)
+	i = -1;
+	while (++i < len)
 	{
 		if (arr[i] < min)
 			min = arr[i];
-		i++;
 	}
 	return (get_address_ofhook(sa, min));
 }
+
 void	get_lsthooks(t_stack *sa, t_stack *sb)
 {
 	if (!sb)
