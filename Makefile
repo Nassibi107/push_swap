@@ -28,9 +28,14 @@ FLAGS = -Wall -Wextra -Werror
 
 HEAD = push_swap.h
 CC = cc
+GREEN = \033[1;32m
+YELLOW		=	\e[38;5;226m
+RESET = \033[0m
+OK	=	[$(GREEN)SUCCESS$(RESET)]
+NO	=	[$(YELLOW)INFO$(RESET)]
 HEADERS = $(wildcard *.h)
 %.o: %.c ${HEADERS}
-	${CC} ${FLAGS} -c $< -o $@
+	@${CC} ${FLAGS} -c $< -o $@
 
 all: $(NAME) $(AOUT)
 
@@ -41,14 +46,17 @@ $(NAME): $(OBJS_L) $(OBJS_T) $(OBJS_F) $(OBJS_LG)
 $(AOUT): $(NAME) $(OBJ)
 	@$(CC) $(FLAGS) -o $@ $(OBJ) $(NAME)
 	@$(RM) $(OBJ)
+	@echo "$(GREEN)------------------------------------------------------$(RESET)"
+	@echo "$(GREEN)		push_swap is running "
+	@echo "$(GREEN)------------------------------------------------------$(RESET)"
 	@printf "$(OK) push_swap ready.\n"
 
 clean:
 	@$(RM) -rf $(OBJ) $(OBJS_L) $(OBJS_T) $(OBJS_F) $(OBJS_LG)
-	@printf "$(INFO) object files removed.\n"
+	@printf "$(NO) object files removed.\n"
 
 fclean: clean
 	@$(RM) -rf $(NAME) $(AOUT)
-	@printf "$(INFO) $(NAME) removed.\n"
+	@printf "$(NO) $(NAME) removed.\n"
 
 re: fclean all
