@@ -6,16 +6,16 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:34:01 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/12 15:01:33 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:10:59 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "fun.h"
 
-void push_b (t_stack **head,t_stack **sb)
+void	push_b(t_stack **head, t_stack **sb)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
+
 	tmp = *head;
 	(*head) = (*head)->next;
 	if (!(*sb))
@@ -27,10 +27,9 @@ void push_b (t_stack **head,t_stack **sb)
 	else
 	{
 		tmp->pos = 0;
-		tmp->next =  *sb;
+		tmp->next = *sb;
 		*sb = tmp;
 	}
 	set_pos_lstx(*head);
 	ft_putendl_fd("pb", 1);
 }
-

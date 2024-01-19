@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 20:51:46 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 11:12:08 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:30:52 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_stack	*lststack(t_stack *lst)
 {
-	if (!lst)
-		return 0x0;
 	t_stack	*temp;
 
+	if (!lst)
+		return (0x0);
 	temp = lst;
 	if (!temp)
 		return (0);

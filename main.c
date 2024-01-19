@@ -6,13 +6,12 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/17 14:59:17 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:34:03 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "src/functions/fun.h"
-
 
 static void	err(void)
 {
@@ -33,9 +32,9 @@ static int	is_empty(char *str)
 
 char	**input_checker(int ac, char **av)
 {
-	char		*str;
-	char		**rst;
-	int			len;
+	char	*str;
+	char	**rst;
+	int		len;
 
 	len = ft_lenjoin(av, ac);
 	str = ft_join(av, len, ac);
@@ -48,13 +47,14 @@ char	**input_checker(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_stack	*sa;
-	t_stack	*sb = NULL;
+	t_stack	*sb;
 	int		j;
 	int		e;
 
+	sb = NULL;
 	j = 1;
 	e = 0;
-	if (ac  > 1)
+	if (ac > 1)
 	{
 		while (j < ac)
 		{
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 			if (input_checker(ac, av))
 			{
 				ft_build_sa(input_checker(ac, av), &sa);
-					ft_switch(sa,sb);
+				ft_switch(sa, sb);
 			}
 			else
 				err();

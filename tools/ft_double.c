@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:27:02 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/04 15:27:47 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:26:23 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int	is_double(char **rst)
 {
-	int i = 0;
-	int j = 0;
+	int	i;
+	int	j;
 
+	i = 0;
+	j = 0;
 	while (rst[i])
 	{
 		j = i + 1;

@@ -6,18 +6,18 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:32:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/04 15:34:10 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:26:33 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	*ft_join(char **av,int len,int ac)
+char	*ft_join(char **av, int len, int ac)
 {
-	char *str ;
-	int i ;
-	int j ;
-	int s ;
+	char	*str;
+	int		i;
+	int		j;
+	int		s;
 
 	i = 0;
 	j = 1;
@@ -37,11 +37,5 @@ char	*ft_join(char **av,int len,int ac)
 		if (j++ < ac - 1)
 			str[s++] = ' ';
 	}
-	return (str[s] = '\0',str);
+	return (str[s] = '\0', str);
 }
-
-
-
-
-
-

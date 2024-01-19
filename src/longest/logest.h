@@ -6,15 +6,13 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:49:01 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/10 15:36:23 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:24:56 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LONGEST_H
 # define LONGEST_H
 
-
-#include "../../push_swap.h"
-
+# include "../../push_swap.h"
 
 #endif

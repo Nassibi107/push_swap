@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 11:00:12 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/07 11:06:43 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:29:02 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int	get_lstmin(t_stack *sa)
 {
-	int p;
+	int	p;
+	int	s;
 
 	p = sa->value;
-	int s = 0;
+	s = 0;
 	while (sa)
 	{
 		if (sa->value < p)

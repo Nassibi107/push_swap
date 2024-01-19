@@ -6,45 +6,44 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:01:43 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 12:13:24 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:12:21 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fun.h"
 
-static void rrotate_a(t_stack **head)
+static void	rrotate_a(t_stack **head)
 {
 	t_stack	*tmp;
 
 	tmp = lststack(*head);
-   ft_befor_lst(*head)->next = NULL;
-   tmp->next = (*head);
-   *head = tmp;
+	ft_befor_lst(*head)->next = NULL;
+	tmp->next = (*head);
+	*head = tmp;
 	ft_putendl_fd("rra", 1);
 	set_pos_lstx(*head);
 }
-static void rrotate_b(t_stack **head)
+static void	rrotate_b(t_stack **head)
 {
 	t_stack	*tmp;
 
 	tmp = lststack(*head);
-   ft_befor_lst(*head)->next = NULL;
-   tmp->next = (*head);
-   tmp = *head;
+	ft_befor_lst(*head)->next = NULL;
+	tmp->next = (*head);
+	tmp = *head;
 	set_pos_lstx(*head);
 }
 
-void	rrotate(t_stack **head,t_stack **sb,char flag)
+void	rrotate(t_stack **head, t_stack **sb, char flag)
 {
 	if (flag == 'a')
 		rrotate_a(head);
 	else if (flag == 'b')
 		rrotate_b(head);
 	else if (flag == 'r')
-		{
-			rrotate_b(head);
-			rrotate_b(sb);
-			ft_putendl_fd("rrr", 1);
-		}
-
+	{
+		rrotate_b(head);
+		rrotate_b(sb);
+		ft_putendl_fd("rrr", 1);
+	}
 }

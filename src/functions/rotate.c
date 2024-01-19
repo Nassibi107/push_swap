@@ -6,13 +6,13 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 20:27:31 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 12:13:15 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:20:14 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fun.h"
 
-static void rotate_a(t_stack **head)
+static void	rotate_a(t_stack **head)
 {
 	t_stack	*tmp;
 	t_stack	*rot;
@@ -25,7 +25,7 @@ static void rotate_a(t_stack **head)
 	ft_putendl_fd("ra", 1);
 	set_pos_lstx(*head);
 }
-static void rotate_b(t_stack **head)
+static void	rotate_b(t_stack **head)
 {
 	t_stack	*tmp;
 	t_stack	*rot;
@@ -38,18 +38,16 @@ static void rotate_b(t_stack **head)
 	set_pos_lstx(*head);
 }
 
-
-void rotate(t_stack **head,t_stack **sb,char flag)
+void	rotate(t_stack **head, t_stack **sb, char flag)
 {
 	if (flag == 'a')
 		rotate_a(head);
 	else if (flag == 'b')
 		rotate_b(head);
 	else if (flag == 'r')
-		{
-			rotate_b(head);
-			rotate_b(sb);
-			ft_putendl_fd("rr", 1);
-		}
-
+	{
+		rotate_b(head);
+		rotate_b(sb);
+		ft_putendl_fd("rr", 1);
+	}
 }

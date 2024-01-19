@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 16:32:40 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:25:58 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:26:14 by abechcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	ft_lstadd_back_sa(t_stack **sa, t_stack *nsa)
 	temp->next = nsa;
 }
 
-static t_stack	*ft_lstnew_sa(int content,int pos)
+static t_stack	*ft_lstnew_sa(int content, int pos)
 {
 	t_stack	*new;
 
@@ -45,23 +45,22 @@ static t_stack	*ft_lstnew_sa(int content,int pos)
 
 void	ft_build_sa(char **str, t_stack **sa)
 {
-	int i;
-	int val;
+	int	i;
+	int	val;
+
 	i = 0;
 	while (str[i])
 	{
-	if (!sa)
-	{
-		ft_lstnew_sa(val, i);
-		val = (int) ft_atoi(str[i++]);
-	}
-	else
-	{
-		val = (int) ft_atoi(str[i]);
-
-			ft_lstadd_back_sa(sa,ft_lstnew_sa(val, i));
+		if (!sa)
+		{
+			ft_lstnew_sa(val, i);
+			val = (int)ft_atoi(str[i++]);
+		}
+		else
+		{
+			val = (int)ft_atoi(str[i]);
+			ft_lstadd_back_sa(sa, ft_lstnew_sa(val, i));
 			i++;
 		}
 	}
 }
-
