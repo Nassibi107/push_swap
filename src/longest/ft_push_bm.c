@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 17:54:36 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/20 13:41:23 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	ft_push_bm(t_stack **sb, t_stack **sa)
 	size_a = get_lstsize(*sa);
 	bolt(*sb, *sa);
 	min_p = ft_getmin_mv(*sb);
-	if (min_p->pos < (size_b / 2) && min_p->hook->pos < (size_a / 2))
+	if (min_p->pos <= (size_b / 2) && min_p->hook->pos <= (size_a / 2))
 		ft_up(sb, sa);
 	else if (min_p->pos > (size_b / 2) && min_p->hook->pos > (size_a / 2))
 		ft_down(sb, sa);
