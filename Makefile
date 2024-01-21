@@ -11,11 +11,12 @@ SRCS_L = src/libft/ft_atoi.c src/libft/ft_putchar_fd.c src/libft/ft_putendl_fd.c
 
 SRCS_LG = src/longest/ft_tsub.c src/longest/ft_subnode.c src/longest/nsub_to_sb.c \
 		src/longest/get_bsmove_lst.c src/longest/bolt.c src/longest/ft_push_bm.c \
-		src/longest/ft_sorting.c
+		src/longest/ft_sorting.c  	src/longest/getmin_move.c src/longest/index.c \
+		src/longest/loop.c
 
 SRCS_F = src/functions/rotate.c src/functions/swap.c src/functions/sort_t.c src/functions/ft_switch.c \
          src/functions/sort_th.c src/functions/rrotate.c src/functions/push_a.c src/functions/push_b.c src/functions/move_a.c \
-         src/functions/move_b.c
+         src/functions/move_b.c src/functions/pu_s.c
 
 SRC = main.c
 OBJ = main.o

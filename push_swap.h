@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 14:29:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 17:38:32 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/21 14:00:19 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,12 @@ void				move_b(t_stack **sa, t_stack **sb);
 void				get_lsthooks(t_stack *sa, t_stack *sb);
 char				**input_checker(int ac, char **av);
 void				get_bsmove_lst(t_stack **sa, t_stack **sb);
-void				ft_push_bm(t_stack **sb, t_stack **sa);
 void				bolt(t_stack *sb, t_stack *sa);
 void				ft_sorting(t_stack **sa);
+void	pu_sh(t_stack **src, t_stack **dest, int flag);
+
+void	loop(t_stack **stack_a, t_stack **stack_b);
+void	getmin_move(t_stack **stack_b, t_stack **stack_a);
+void	ft_push_bm(t_stack **sb, t_stack **sa,t_stack *best);
+int	ft_index(t_stack **stack, int a);
 #endif

@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:44:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/19 15:26:39 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/20 20:54:52 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,9 @@ t_stack	*get_lsthook(t_stack *sa, t_stack *sb)
 
 void	get_lsthooks(t_stack *sa, t_stack *sb)
 {
-	if (!sb)
+	if (!sb   )
 		return ;
+
 	sb->hook = get_lsthook(sa, sb);
 	get_lsthooks(sa, sb->next);
 }

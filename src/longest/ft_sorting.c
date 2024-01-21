@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 17:22:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/20 14:16:28 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:03:42 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void  ft_sorting(t_stack **sa)
 
 	if (min->pos > (get_lstsize(*sa) / 2))
 		while (min->pos)
-			rrotate(sa,NULL, 'a');
+			rotate(sa,NULL, 'a');
 	else
 		while (min->pos)
-			rotate(sa,NULL, 'a');
+			rrotate(sa,NULL, 'a');
 }

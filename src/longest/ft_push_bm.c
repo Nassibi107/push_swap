@@ -1,101 +1,94 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_push_bm.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 15:49:44 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/20 13:41:23 by ynassibi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "logest.h"
 #include <stdio.h>
 
-static t_stack	*ft_getmin_mv(t_stack *sb)
-{
-	t_stack	*ele;
-	int		tmp;
 
-	ele = sb;
-	tmp = sb->mv + sb->hook->mv;
-	while (sb)
+
+void	ft_forward_to_rrr(t_stack **sa, t_stack **sb, t_stack *best)
+{
+	while (best->mv != 0 || best->hook->mv != 0)
 	{
-		if ((sb->mv + sb->hook->mv) < tmp)
+		if (best->mv != 0 && best->hook->mv != 0)
 		{
-			tmp = sb->mv + sb->hook->mv;
-			ele = sb;
+			rrotate(sb, sa,'r');
+			best->mv = best->mv + 1;
+			best->hook->mv = best->hook->mv + 1;
 		}
-		sb = sb->next;
+		else if (best->mv != 0 && best->hook->mv == 0)
+		{
+			rrotate(sb, NULL,'b');
+			best->mv = best->mv + 1;
+		}
+		else if (best->mv == 0 && best->hook->mv != 0)
+		{
+			rrotate(sa, NULL,'a');
+			best->hook->mv = best->hook->mv + 1;
+		}
 	}
-	return (ele);
 }
 
-static void	ft_up(t_stack **sb, t_stack **sa)
+void	ft_forward_to_rr(t_stack **sa, t_stack **sb, t_stack *best)
 {
-	while ((*sb)->pos != 0 || (*sb)->hook->pos != 0)
+	while (best->mv != 0 || best->hook->mv != 0)
 	{
-		if ((*sb)->pos && (*sb)->hook->pos)
-			rotate(sb, sa, 'r');
+		if (best->mv != 0 && best->hook->mv != 0)
+		{
+			rotate(sb, sa,'r');
+			best->mv = best->mv - 1;
+			best->hook->mv = best->hook->mv - 1;
+		}
+		else if (best->mv != 0 && best->hook->mv == 0)
+		{
+			rotate(sb, NULL,'b');
+			best->mv = best->mv - 1;
+		}
+		else if (best->mv == 0 && best->hook->mv != 0)
+		{
+		rotate(sa, NULL,'a');
+			best->hook->mv = best->hook->mv - 1;
+		}
+	}
+}
+
+void	ft_forward_to_r_rr(t_stack **sa, t_stack **sb, t_stack *best)
+{
+	while (best->mv != 0 || best->hook->mv != 0)
+	{
+		if (best->mv > 0)
+		{
+			rotate(sb, NULL,'b');
+			best->mv = best->mv - 1;
+		}
+		else if (best->mv < 0)
+		{
+			rrotate(sb, NULL,'b');
+			best->mv = best->mv + 1;
+		}
+		if (best->hook->mv > 0)
+		{
+			rotate(sb, NULL,'b');
+			best->hook->mv = best->hook->mv - 1;
+		}
+		else if (best->hook->mv < 0)
+		{
+			rrotate(sa, NULL,'a');
+			best->hook->mv = best->hook->mv + 1;
+		}
+	}
+}
+
+
+void	ft_push_bm(t_stack **sb, t_stack **sa,t_stack *best)
+{
+
+	while (*sb != best || *sa != best->hook)
+	{
+		if (best->mv == 0 && best->hook->mv == 0)
+			break ;
+		if (best->mv < 1 && best->hook->mv < 1)
+			ft_forward_to_rrr(sa, sb, best);
+		else if (best->mv >= 1 && best->hook->mv >= 1)
+			ft_forward_to_rr(sa, sb, best);
 		else
-		{
-			if ((*sb)->pos > 0)
-				rotate(sb, NULL, 'b');
-			if ((*sb)->hook->pos > 0)
-				rotate(sa, NULL, 'a');
-		}
+			ft_forward_to_r_rr(sa, sb, best);
 	}
-	push_a(sa, sb);
-}
-
-static void	ft_down(t_stack **sb, t_stack **sa)
-{
-	while ((*sb)->pos != 0 || (*sb)->hook->pos != 0)
-	{
-		if ((*sb)->pos && (*sb)->hook->pos)
-			rrotate(sb, sa, 'r');
-		else
-		{
-			if ((*sb)->pos == 0)
-				rrotate(sa, NULL, 'a');
-			else
-				rrotate(sb, NULL, 'b');
-		}
-	}
-	push_a(sa, sb);
-}
-
-static void	ft_down_up(t_stack **sb, t_stack **sa, int sib, int sia)
-{
-	while ((*sb)->pos != 0 || (*sb)->hook->pos != 0)
-	{
-		if ((*sb)->pos > sib / 2)
-			rrotate((sb), NULL, 'b');
-		if ((*sb)->hook->pos > sia / 2)
-			rrotate(sa, NULL, 'a');
-		if ((*sb)->pos <= sib / 2 && (*sb)->pos != 0)
-			rotate((sb), NULL, 'b');
-		if ((*sb)->hook->pos <= sia / 2 && (*sb)->hook->pos != 0)
-			rotate(sa, NULL, 'a');
-	}
-	push_a(sa, sb);
-}
-
-void	ft_push_bm(t_stack **sb, t_stack **sa)
-{
-	t_stack	*min_p;
-	int		size_b;
-	int		size_a;
-
-	size_b = get_lstsize(*sb);
-	size_a = get_lstsize(*sa);
-	bolt(*sb, *sa);
-	min_p = ft_getmin_mv(*sb);
-	if (min_p->pos <= (size_b / 2) && min_p->hook->pos <= (size_a / 2))
-		ft_up(sb, sa);
-	else if (min_p->pos > (size_b / 2) && min_p->hook->pos > (size_a / 2))
-		ft_down(sb, sa);
-	else
-		ft_down_up(sb, sa, size_b, size_a);
 }

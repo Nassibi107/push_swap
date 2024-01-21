@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_pos_lstx.c                                     :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 14:36:34 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/20 17:14:44 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/21 13:56:27 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/21 13:56:28 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
 
-void	set_pos_lstx(t_stack *head)
+#include "logest.h"
+
+int	ft_index(t_stack **stack, int a)
 {
 	t_stack	*tmp;
 	int		i;
 
 	i = 0;
-	tmp = head;
+	tmp = *stack;
 	while (tmp)
 	{
-		tmp->pos = i++;
+		if (tmp->value == a)
+			return (i);
+		i++;
 		tmp = tmp->next;
 	}
+	return (-1);
 }
